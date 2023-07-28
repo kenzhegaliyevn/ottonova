@@ -1,9 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
 const app = express();
 const PORT = 4200;
 
-app.use(express.json());
+app.use(cors());
 
 app.get('/api/data', (req, res) => {
   fs.readFile('data.json', 'utf-8', (err, data) => {
